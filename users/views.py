@@ -1,5 +1,12 @@
 from django.shortcuts import render, redirect
 from .forms import *
+from .models import *
+from django.contrib.auth import authenticate, login as auth_login, logout
+from django.contrib import messages
+from django.contrib.auth.decorators import login_required
+from django.views.decorators.csrf import csrf_exempt,csrf_protect
+
+
 
 
 
@@ -7,6 +14,7 @@ def homeView(request):
     return render(request, 'home.html')
 
 
+@csrf_exempt
 def signUpView(request):
     if request.method == 'POST':
         form = SignUpForm(request.POST)
@@ -14,13 +22,14 @@ def signUpView(request):
             form.save()
             username = form.cleaned_data['username']
             password = form.cleaned_data['password1']
-            user = authencate(username=username, password=password)
+            user = authenticate(username=username, password=password)
             if user is not None:
-                login(request, user)
-                return ('profile')
+                auth_login(request, user)
+                return redirect('profile')
     form = SignUpForm()
-    return redirect(request, 'signup.html', {'form': form})
+    return render(request, 'signup.html', {'form': form})
 
+@csrf_exempt
 def loginView(request):
     if request.method == 'POST':
         username = request.POST.get('username')
@@ -40,8 +49,14 @@ def logoutView(request):
     logout(request)
     return redirect('home')
 
-
+@login_required()
 def profileView(request):
     if request.method == 'GET':
-        details = Profile.objects.all()
-    return render(request, 'profile.html', {details: details})        
+        try:
+            details = Profile.objects.get(user=request.user)
+        except Profile.DoesNotExist:
+            details = None
+        return render(request, 'profile.html', {'details': details})
+    return render(request, 'profile.html')
+
+        
