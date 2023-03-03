@@ -5,7 +5,9 @@ from django.contrib.auth import authenticate, login as auth_login, logout
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.views.decorators.csrf import csrf_exempt,csrf_protect
-
+from django.http import HttpResponse, JsonResponse
+from django.shortcuts import render
+import json
 
 
 
@@ -51,12 +53,30 @@ def logoutView(request):
 
 @login_required()
 def profileView(request):
-    if request.method == 'GET':
-        try:
-            details = Profile.objects.get(user=request.user)
-        except Profile.DoesNotExist:
-            details = None
-        return render(request, 'profile.html', {'details': details})
+    import requests
+    if 'location' in request.GET:
+        city = request.GET.get('location')
+
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={'city'}&appid={'b0619da772219bc7279a401ff34bfa93'}"
+        
+
+        # demonstrate how to use the 'params' parameter:
+        x = requests.get(url)
+
+        #Converts response object to dictionary
+        x = x.json()
+        print(x)
+
+        context = {
+            'weather_condition': f"Weather Condition - {x['weather'][0]['main'].upper()}",
+            'weather_description': f"Weather Description - {x['weather'][0]['description'].upper()}",
+            'country': f"Country - {x['sys']['country'].upper()}",
+            'city':  f"City - {x['name'].upper()}",
+            'temp':  f"Temperature - {x['main']['temp']}",
+            'base': f"Base - {x['base'].upper()}"
+        }
+
+        return render(request, 'profile.html', context)
     return render(request, 'profile.html')
 
         
