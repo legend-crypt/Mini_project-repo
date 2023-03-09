@@ -77,3 +77,561 @@ input[type='text'] {
     font-weight: 600;
     font-family: Arial;
 }
+*{
+  margin: 0;
+  padding: 0;
+  font-family: 'Poppins', sans-serif;
+  box-sizing: border-box;
+}
+
+html{
+  scroll-behavior: smooth;
+}
+body {
+  background: black;
+  color: #fff;
+}
+
+/*the header*/
+#header {
+  width: 100%;
+  height: 115vh;
+  background: linear-gradient(rgba(64, 70, 95, 0.7),rgba(64, 70, 95, 0.7)), url(soil.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+}
+
+.container{
+  padding: 10px 10px;
+}
+
+nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.logo{
+   width: 150px;
+   height: 100px;
+   padding-left: 20px;
+}
+
+nav ul li{
+  display: inline-block;
+  list-style: none;
+  margin: 10px 20px;
+}
+
+nav ul li a{
+   color: white;
+   text-decoration: none;
+   font-size: 17px; 
+   font-weight: bold;
+   font-family: cursive;
+   position: relative;
+}
+nav ul li a::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background:rgba(93, 231, 74, 0.7);
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  transition: 0.5s;
+}
+
+nav ul li a:hover::after{
+  width: 100%;
+}
+
+
+.header-text{
+  margin-top: 5%;
+  font-size: 20px;
+} 
+
+
+
+span{
+  font-size: 25px;
+  color:rgb(0, 0, 0);
+}
+.row1{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;    
+}
+.col-1{
+  flex-basis: 50%;
+}
+.col-1 h1{
+  padding-top: 10%;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+}
+.col-2{
+  flex-basis: 35%;
+}
+.col-2 img{
+  border-radius: 100%;
+}
+
+/*AGRICULTURE IN GHANA*/
+#Ghana{
+  width: 100%;
+  height: 120vh;
+  margin-top: 10px;
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(farmer.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 80px;
+  color: #abababab;
+}
+
+.row{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;    
+}
+
+.about-col-1{
+  flex-basis: 35%;
+}
+.about-col-1 video{
+  width: 100%;
+  height: 100%;
+  position: relative;
+  border-radius: 30px;
+}
+
+.about-col-2{
+  flex-basis: 60%;
+}
+.about-col-2 p{
+  font-size: 20px;
+  color: #fff;
+  font-family: 'Times New Roman', Times, serif;
+  text-align: justify;
+}
+.about-col-2 p i{
+  color: #16e438;
+  font-size: 16px;
+}
+
+.tab-contents.active-tab ul li{
+  font-size: 25px;
+  color: #fff;
+}
+.sub-title{
+  font-family: cursive;
+  font-size: 60px;
+  font-weight: 600;
+  color: #fff;
+}
+span-1{
+  color:rgb(8, 241, 20);
+  font-family: cursive;
+  font-size: 60px;
+  font-weight: 600;
+}
+
+span{
+  color:rgb(8, 241, 20);
+  font-family:'Times New Roman', Times, serif;
+  font-size: 20px;
+  font-weight: 500;
+}
+.tab-titles{
+  display: flex;
+  margin: 20px 0 40px;
+}
+
+.tab-links{
+  margin-right: 50px;
+  font-size: 18px;
+  font-weight: 500;
+  cursor: pointer;
+  position: relative;
+}
+
+.tab-links::after{
+  content: '';
+  width: 0;
+  height: 3px;
+  background: #16e438;
+  position: absolute;
+  left: 0;
+  bottom: -8px;
+  transition: 0.5s;
+}
+
+.tab-links.active-link::after{
+  width: 50% ;
+}
+
+.tab-contents ul li{
+  list-style: none;
+  margin: 10px 0;
+}
+
+.tab-contents{
+  display: none;
+}
+
+.tab-contents.active-tab{
+  display: block;
+}
+
+
+/* Agric practices in Ghana*/
+#practices{
+  width: 100%;
+  height: 110vh;
+  margin-top: 10px;
+  background-image: linear-gradient(rgba(4,9,30,0.7),rgba(4,9,30,0.7)), url(splash.jpg);
+  background-position: center;
+  background-size: cover;
+  position: relative;
+  padding: 30px 0;
+}
+.sub-title-2{
+  font-family: cursive;
+  font-size: 50px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+}
+
+.practice-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+.practice-list-1{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.practice-list div{
+  background: #262626;
+  padding: 40px;
+  font-size: 15px;
+  font-weight: 300;
+  border-radius: 10px;
+  text-align: center;
+  transition: background 0.5s, transform 0.5s;
+}
+.practice-list-1 div{
+  background: #262626;
+  padding: 40px;
+  font-size: 13px;
+  font-weight: 300;
+  text-align: center;
+  transition: background 0.5s, transform 0.5s;
+  border-radius: 10px;
+}
+
+.practice-list div h2{
+  font-family: cursive;
+  font-size: 30px;
+  font-weight: 500;
+  color:#16e438;
+  text-align: center;
+  margin-bottom: 15px;
+}
+.practice-list-1 div h2{
+  font-family: cursive;
+  font-size: 30px;
+  font-weight: 500;
+  text-align: center;
+  color:#16e438;
+  margin-bottom: 15px;
+}
+
+.practice-list div a{
+  text-decoration: none;
+  color:#fff;
+  font-size: 12px;
+  margin-top: 20px;
+  display: inline-block;
+}
+.practice-list-1 div a{
+  text-decoration: none;
+  color:#fff;
+  font-size: 12px;
+  margin-top: 20px;
+  display: inline-block;
+}
+
+.practice-list div:hover{
+  background: #201e33;
+  transform: translateY(-10px);
+}
+.practice-list-1 div:hover{
+  background: #201e33;
+  transform: translateY(-10px);
+}
+
+.practice-list div a:hover{
+  border-bottom: 5px solid #0f7003;
+  border-radius: 10px;
+  background: transparent;
+  transition: 0.5s;
+}
+
+
+.practice-list-1 div a:hover{
+  border-bottom: 5px solid #0f7003;
+  border-radius: 10px;
+  background: transparent;
+  transition: 0.5s;
+}
+
+
+
+
+/*What we do thus expectation*/
+#expectation{
+  width: 100%;
+  height: 100vh;
+  margin-top: 10px;
+  padding: 50px 0;
+  background-color: #c9e6cf;
+}
+.sub-title-1{
+  color:black;
+  font-family: cursive;
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.work-list{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-gap: 40px;
+  margin-top: 50px;
+}
+
+.work{
+  border-radius: 10px;
+  position: relative;
+  overflow: hidden;
+}
+
+.work img{
+  width: 100%;
+  border-radius: 10px;
+  display: block;
+  transition: transform 0.5s;
+}
+
+.layer{
+  width: 100%;
+  height: 0;
+  background: linear-gradient(rgba(0,0,0,0.6), #ff004f);
+  border-radius: 10px;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 0 40px;
+  text-align: center;
+  font-size: 18px;
+  transition: height 0.5s;
+}
+
+.layer h3{
+  font-family: cursive;
+  font-size: 23px;
+  font-style: bold;
+  font-weight: 500;
+  margin-bottom: 20px;
+}
+.layer a{
+  margin-top:  20px;
+  color:#d41656;
+  text-decoration: none;
+  font-size: 18px;
+  line-height: 60px;
+  background: #c9e6cf;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-align: center;
+}
+.work:hover img{
+  transform: scale(1.1);
+}
+
+.work:hover .layer{
+  height: 100%;
+}
+
+.btn{
+  display: block;
+  margin: 50px auto;
+  width: fit-content;
+  border: 1px solid #ff004f; 
+  padding: 14px;
+  border-radius: 6px;
+  text-decoration: none;
+  color: black;
+  font-family: cursive;
+  font-size: 18px;
+  transition: background 0.5s;
+}
+
+.btn:hover{
+  background: #ff004f;
+  cursor: pointer;
+}
+
+.copyright{
+  width: 100%;
+  height: 8vh;
+  text-align: center;
+  padding: 25px 0;
+  background:#262626;
+  font-weight: 300;
+  font-family: cursive;
+  font-size: 23px;
+  font-style: italic;
+  margin-top: 10px;
+  cursor: pointer;
+}
+
+.copyright i{
+  color:rgb(8, 241, 20);
+}
+
+
+/* Responsiveness*/
+nav .fa-solid{
+  display: none;
+}
+
+@media only screen and (max-width: 600px){
+  #header{
+  width: 100vh;
+  height: 90vh;
+  }
+
+
+  nav .fa-solid{
+      display: block;
+      font-size: 25px;
+  }
+  nav ul{
+      background:#68434e;
+      position: fixed;
+      top: 0;
+      right: -200px;
+      width: 200px;
+      height: 55vh;
+      padding-top: 50px;
+      z-index: 2;
+      transition: right 0.5s;
+  }
+  nav ul li{
+      display: block;
+      margin: 25px;
+  }
+  nav ul .fa-solid{
+      position: absolute;
+      top: 25px;
+      left: 25px;
+      cursor: pointer;
+  }
+  .col-1 h1{ 
+      margin-top: 30%;
+      font-size: 20px;
+      text-align: left;
+      font-weight: normal;
+  }
+  .col-2 img{
+      width: 100%;
+      height: 50vh;
+      margin-top: 30%;
+  }
+
+  #Ghana{
+  width: 100vh;
+  height: 123vh;
+  display: flex;
+  }
+
+  .about-col-1 video{
+      width: 100%;
+      height: 30vh;
+      margin-top: 25%;
+  }
+  .sub-title, span-1{
+      font-size: 20px;
+      text-align: center;
+      margin-top: -70%;
+      width: 80vh;
+  }
+  .about-col-2 p{
+      width:auto !important;
+      height: 90vh;
+      font-size: 16px;
+      text-align: justify;
+  }
+  
+  .about-col-1, .about-col-2{
+      flex-basis: 100%;
+  }
+  
+  .tab-links{
+      font-size: 20px;
+      margin-top: -40%;
+      text-align: left;
+  }
+  .tab-contents{
+      font-size: 10px;
+      margin-top: -110%;
+  }
+  .tab-contents span{
+      margin-top: -50%;
+      font-size: 15px;
+  }
+  
+  #practices{
+      width: 100vh;
+      height: 190vh;
+  }
+  .sub-title-2{
+      font-size: 25px;
+      color:#16e70e;
+  }
+
+  .practice-list{
+      flex-direction: column;
+     
+  }
+
+  #expectation{
+      width: 100vh;
+      height: 130vh;
+  }
+  .copyright{
+      width: 100vh;
+      height: 10vh;
+  }
+  .sub-title-1{
+      font-size: 28px;
+  }
+}

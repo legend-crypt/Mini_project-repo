@@ -1,9 +1,218 @@
-{% extends 'base.html' %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AgriPract</title>
+    <link rel="stylesheet" href="homepage.css">
+    <script src="https://kit.fontawesome.com/1a98ce2346.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div id="header">
+       <div class="container">
+        <nav>
+           <a href="homepage.html"><img src="Agric-1.png" alt="logo" class="logo"></a> 
+            <ul id="sidemenu">
+                <li><a href="#header">Home</a></li>
+                <li><a href="#Ghana">Agric in Ghana</a></li>
+                <li><a href="#practices">Practices</a></li>
+                <li><a href="#expectation">Expectations</a></li>
+                <li><a href="#">Sign Up</a></li>
+                <li><a href="#">Login</a></li>
+                <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+            </ul>
+            <i class="fa-solid fa-bars" onclick="openmenu()"></i> 
+        </nav>
+        <div class="header-text">
+            <div class="container">
+                <div class="row1">
+                    <div class="col-1">
+                        <h1>AgricPract being the short form of Agricultural Practices
+                            seeks<br> to educate and guide farmers to learn and know when<br>
+                            to culticvate their crops in the recent climate conditions.<br>You 
+                            can make the most from the little effort you put into work.
+                        </h1>
+                    </div>
+                    <div class="col-2">
+                        <img src="Agric-1.png" id = "Agric" alt="Image">
+                    </div>
+                </div>
+            </div>
+            
+            
+            
+        </div>
+       </div>
+    </div>
 
-{% block content %}
-<h1>
-    {% if user.is_authenticated%}
-    {{ user.username}}
-    {% endif %}
-</h1>
-{% endblock content%}
+
+
+    <!--Agriculture in Ghana-->
+    <div id="Ghana">
+        <div class="container">
+            <div class="row">
+                <div class="about-col-1">
+                    <video  controls src="drone.mp4" class="video">
+                </div> 
+
+                <div class="about-col-2">
+                    <h1 class="sub-title">AGRI<span-1>CULTURE</span-1></h1>
+                    <p>
+                        Agriculture is the art and science of cultivating the soil, growing crops and raising livestock.
+                         It includes the preparation of plant and animal products for people to use and their distribution to markets.
+                          Agriculture provides most of the world's food and fabrics.<i>Wikipedia</i>
+                          <br>Based on the rapid cimate change in Ghana's environment, the farmers incur a lot of
+                          cost in their daily cultivation. Agriculture is one of the most productive sectors in our country and
+                          taking care of it will bring more income and reduce cost on the farmers.
+
+                    </p>
+
+                    <div class="tab-titles">
+                        <p class="tab-links active-link" onclick="opentab('Major Cash crops')">Major Cash crops</p>
+                        <p class="tab-links" onclick="opentab('Major starchy staples')">Major starchy staples</p>
+                        <p class="tab-links" onclick="opentab('Total cutivated land')">Total cutivated land</p>
+                    </div>
+
+                    <div class="tab-contents active-tab" id="Major Cash crops">
+                        <ul>
+                            <li><span>Cash Crops</span><br>Cocoa<br>Oil palm <br>Citrus <br>Rubber</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Major starchy staples">
+                        <ul>
+                            <li><span>Starchy staples</span><br>Maize<br>Plantain <br>Yam <br>Cassava<br>Cocoyam<br>Rice<br>Sorghum<br>Millet</li>
+                        </ul>
+                    </div>
+                    <div class="tab-contents" id="Total cutivated land">
+                        <ul>
+                            <li><span>Cultivated land</span><br>Total area of 3.40Mha of the cultivated land are made of these crops <br>Thus, about 43% of the total cultivated land</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Agricultural practices in Ghana-->
+<div id ="practices">
+    <div class="container">
+            <h1 class="sub-title-2">Some Ghanaian Agric Practices</h1>
+        <div class="practice-list">
+                <div>
+                    <h2>Plowing</h2>
+                    <p>This act is done by turning up the soil to suit cultivation. <br>It is mostly done before sowing.</p>
+                    <a href="https://en.wikipedia.org/wiki/Plough">Read more</a>
+                </div>
+                <div>
+                    <h2>Tilling</h2>
+                    <p>In order to cultivate, the farmer will have to prepare the land.<br> That state is referred to as tilling.</p>
+                    <a href="https://en.wikipedia.org/wiki/Tillage">Read more</a>
+                </div>
+                <div>
+                    <h2>Planting/Seeding</h2>
+                    <p>As the name implies. <br>This is where seeds are planted and taken care of.</p>
+                    <a href="https://en.wikipedia.org/wiki/Sowing">Read more</a>
+                </div>
+        </div>       
+
+            <div class="practice-list-1">
+                <div>
+                    <h2>Land Planning/Leveling</h2>
+                    <p>Here, the farmer thinks or plans what to use the land for. <br>Which type of crops to grow?</p>
+                    <a href="https://en.wikipedia.org/wiki/Land-use_planning">Read more</a>
+                </div>
+                <div>
+                    <h2>Ripping</h2>
+                    <p>This is the act of loosening or raising the soil usually during the period of seeding.</p>
+                    <a href="https://www.agric.wa.gov.au/soil-compaction/deep-ripping-soil-compaction">Read more</a>
+                </div>
+                <div>
+                    <h2>Livestock</h2>
+                    <p>One of the major income of the northeners. <br>The rearing of animals for food and income.</p>
+                    <a href="https://en.wikipedia.org/wiki/Livestock">Read more</a>
+                </div>
+            </div>
+        
+    </div>
+</div>
+
+
+
+<!--Expectation/what we do or what you will gain from this site-->
+<div id = "expectation">
+    <div class = "container">
+        <h1 class = "sub-title-1">Expectations</h1>
+        <div class="work-list">
+            <div class="work">
+                <img src="work1.jpg" alt="pic">
+                <div class="layer">
+                    <h3>Agric Advice</h3>
+                    <p>This site briefs the farmer on some practices that will help the business.</p>
+                    <a href="https://en.wikipedia.org/wiki/Good_agricultural_practice"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work2.jpg" alt="pic">
+                <div class="layer">
+                    <h3>Weather Patterns</h3>
+                    <p>The site gives information on the current climate and weather conditions.</p>
+                    <a href="https://en.wikipedia.org/wiki/Climate_of_Ghana"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+            <div class="work">
+                <img src="work4.jpg" alt="pic">
+                <div class="layer">
+                    <h3>Tools</h3>
+                    <p>Get more information on what proper tools are to be used for farming.</p>
+                    <a href="https://occupationtools.com/agriculture-tools-names/"><i class="fa-sharp fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+            </div>
+        </div>
+        <a class="btn" href="https://en.wikipedia.org/wiki/Agriculture_in_Ghana#:~:text=Ghana%20produces%20a%20variety%20of,of%20agriculture%20in%20Ghana's%20economy.">Read more</a>
+    </div>
+    
+</div>
+<div class="copyright">
+    <p>Copyright @ <i class="fa-solid fa-heart-pulse"></i>AgricPract </p>
+</div>
+
+
+
+
+
+
+    <script>
+
+        var tablinks = document.getElementsByClassName("tab-links");
+        var tabcontents = document.getElementsByClassName("tab-contents");
+
+        function opentab(tabname) {
+            for(tablink of tablinks){
+                tablink.classList.remove("active-link");
+            }
+            for(tabcontent of tabcontents){
+                tabcontent.classList.remove("active-tab");
+            }
+            event.currentTarget.classList.add("active-link");
+            document.getElementById(tabname).classList.add("active-tab");
+        }
+
+
+    </script>
+
+    <script>
+
+        var sidemenu = document.getElementById("sidemenu");
+
+        function openmenu(){
+            sidemenu.style.right= "0";
+        }
+        function closemenu(){
+            sidemenu.style.right= "-200px";
+        }
+
+    </script>
+    
+</body>
+</html>
