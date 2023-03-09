@@ -14,7 +14,19 @@
 </head>
 <body>
     <div class="container">
-        <h1>HeLLO</h1>
+        <nav>
+            <a href="homepage.html"><img src="{% static 'images/Agric-1.png' %}" alt="logo" class="logo"></a> 
+             <ul id="sidemenu">
+                 <li><a href="#header">Home</a></li>
+                 <li><a href="#Ghana">Agric in Ghana</a></li>
+                 <li><a href="#practices">Practices</a></li>
+                 <li><a href="#expectation">Expectations</a></li>
+                 <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                 <li><a href="{% url 'login' %}">Login</a></li>
+                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
+             </ul>
+             <i class="fa-solid fa-bars" onclick="openmenu()"></i> 
+         </nav>
         {% block content%}
         {% endblock content%}
     </div>

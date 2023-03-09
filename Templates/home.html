@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,21 +6,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AgriPract</title>
-    <link rel="stylesheet" href="homepage.css">
+    <link rel="stylesheet" href="{% static 'css\homepage.css' %}"/>
     <script src="https://kit.fontawesome.com/1a98ce2346.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="header">
        <div class="container">
         <nav>
-           <a href="homepage.html"><img src="Agric-1.png" alt="logo" class="logo"></a> 
+           <a href="homepage.html"><img src="{% static 'images/Agric-1.png' %}" alt="logo" class="logo"></a> 
             <ul id="sidemenu">
                 <li><a href="#header">Home</a></li>
                 <li><a href="#Ghana">Agric in Ghana</a></li>
                 <li><a href="#practices">Practices</a></li>
                 <li><a href="#expectation">Expectations</a></li>
-                <li><a href="#">Sign Up</a></li>
-                <li><a href="#">Login</a></li>
+                <li><a href="{% url 'signup' %}">Sign Up</a></li>
+                <li><a href="{% url 'login' %}">Login</a></li>
                 <i class="fa-solid fa-xmark" onclick="closemenu()"></i>
             </ul>
             <i class="fa-solid fa-bars" onclick="openmenu()"></i> 
@@ -35,7 +36,7 @@
                         </h1>
                     </div>
                     <div class="col-2">
-                        <img src="Agric-1.png" id = "Agric" alt="Image">
+                        <img src="{%static 'images\Agric-1.png'%}" id = "Agric" alt="Image">
                     </div>
                 </div>
             </div>
@@ -145,7 +146,7 @@
         <h1 class = "sub-title-1">Expectations</h1>
         <div class="work-list">
             <div class="work">
-                <img src="work1.jpg" alt="pic">
+                <img src="{% static 'images/work1.jpg' %}" alt="pic">
                 <div class="layer">
                     <h3>Agric Advice</h3>
                     <p>This site briefs the farmer on some practices that will help the business.</p>
@@ -153,7 +154,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="work2.jpg" alt="pic">
+                <img src="{% static 'images/work2.jpg' %}" alt="pic">
                 <div class="layer">
                     <h3>Weather Patterns</h3>
                     <p>The site gives information on the current climate and weather conditions.</p>
@@ -161,7 +162,7 @@
                 </div>
             </div>
             <div class="work">
-                <img src="work4.jpg" alt="pic">
+                <img src="{% static 'images/work4.jpg'%}" alt="pic">
                 <div class="layer">
                     <h3>Tools</h3>
                     <p>Get more information on what proper tools are to be used for farming.</p>

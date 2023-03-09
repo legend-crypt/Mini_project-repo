@@ -57,7 +57,7 @@ def profileView(request):
     if 'location' in request.GET:
         city = request.GET.get('location')
 
-        url = f"https://api.openweathermap.org/data/2.5/weather?q={'city'}&appid={'b0619da772219bc7279a401ff34bfa93'}"
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={'b0619da772219bc7279a401ff34bfa93'}"
         
 
         # demonstrate how to use the 'params' parameter:
@@ -72,11 +72,17 @@ def profileView(request):
             'weather_description': f"Weather Description - {x['weather'][0]['description'].upper()}",
             'country': f"Country - {x['sys']['country'].upper()}",
             'city':  f"City - {x['name'].upper()}",
-            'temp':  f"Temperature - {x['main']['temp']}",
+            'temp':  f"{x['main']['temp']}",
             'base': f"Base - {x['base'].upper()}"
         }
+        current_temp = float(context['temp']) / 10
+        if current_temp < 25:
+            outcome = Description.objects.get(id=1)
+        else: 
+            outcome = Description.objects.get(id=2)
 
-        return render(request, 'profile.html', context)
+
+        return render(request, 'profile.html', {'context': context, 'outcome': outcome})
     return render(request, 'profile.html')
 
         
