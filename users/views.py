@@ -40,7 +40,7 @@ def loginView(request):
         if user is not None:
                 auth_login(request, user)
                 messages.success(request, "login successful")
-                return redirect('home')
+                return redirect('profile')
         else:
             messages.error(request,'invalid credentials')
             return redirect('login')

@@ -18,7 +18,7 @@ class LoginForm(forms.Form):
         widget=forms.PasswordInput(
             attrs={
                 "placeholder" : "Password",                
-                "class": "form-controlinput"
+                "class": "form-control input"
             }
         ))
 
@@ -47,7 +47,7 @@ class SignUpForm(UserCreationForm):
     password2 = forms.CharField(
         widget=forms.PasswordInput(
             attrs={
-                "placeholder" : "Password check",                
+                "placeholder" : "Confirm Password",                
                 "class": "form-control input"
             }
         ))

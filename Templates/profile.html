@@ -6,9 +6,12 @@
 {% block content %}
   <body class="text-center" style="background-image: url('/static/images/farmer.jpg');">
   <div class="container">
+    <nav>
+      <a href="{% url 'home'%}"><img src="{% static 'images/Agric-1.png' %}" alt="logo" class="logo"></a> 
+       <i class="fa-solid fa-bars" onclick="openmenu()"></i> 
+   </nav>
     <div class="row">
       <div class="col-sm">
-
       </div>
       <div class="col-sm midb">
         <form class="form-signin" method="GET">
@@ -31,8 +34,6 @@
                 </span>
               </div>
             </div>
-
-          <p class="mt-5 mb-3 text-muted"><a href="https://www.github.com/JiboGithub">&copy; Designed by Ajide Habeeb - 2020</a></p>
           </form>
       </div>
       <div class="col-sm">

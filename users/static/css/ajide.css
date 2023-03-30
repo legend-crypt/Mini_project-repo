@@ -5,6 +5,12 @@ body {
 
 }
 
+::placeholder {
+  color: rgb(223, 28, 28);
+  opacity: 1; /* Firefox */
+}
+
+
 body {
   display: -ms-flexbox;
   display: flex;
@@ -22,8 +28,9 @@ body {
 
 .midb {
     padding: 60px;
-    background-color: white;
+    background-color: rgba(17, 17, 17, 0.164);
     margin: 0 auto;
+    border-radius: 10px;
 }
 
 .form-signin {

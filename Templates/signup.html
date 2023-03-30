@@ -11,15 +11,21 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 <link href="https://fonts.googleapis.com/css?family=Nunito:600,700,900" rel="stylesheet">
 
-{%endblock%}
+{%endblock link%}
 
 {% block  content%}
-{%for messsage in messages %}
-<h3>{{ messsage }}</h3>
-{% endfor %}
-<div id="login-card" class="card">
+<body class="text-center" style="
+  background-image: url('/static/images/farmerinfield.jpg');
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  ">
+  {%for messsage in messages %}
+  <h3>{{ messsage }}</h3>
+  {% endfor %}
+  <div id="login-card" class="card">
     <div class="card-body">
-      <h2 class="text-center">Sign Up</h2>
+      <h2 class="text-header">Sign Up</h2>
       <br>
       <form action="{% url 'signup' %}" method='POST'>
         {% csrf_token %}
@@ -39,11 +45,12 @@
           <button type="button" class="btn btn-info btn-circle btn-sm"><i class="fa fa-twitter"></i></button>  
       </div>
       <span>
-        <p>Already have an account<a href="{% url 'login' %}"> Login</a></p>
+        <p>Already have an account? <a href="{% url 'login' %}"> Login</a></p>
       </span>
   
       </form>
     </div>
   <div>
+</body>
 
 {% endblock %}
