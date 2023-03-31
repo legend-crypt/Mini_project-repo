@@ -76,7 +76,7 @@ def profileView(request):
             'base': f"Base - {x['base'].upper()}"
         }
         current_temp = float(context['temp']) / 10
-        if current_temp < 25:
+        if current_temp > 25:
             outcome = Description.objects.get(id=1)
         else: 
             outcome = Description.objects.get(id=2)

@@ -15,7 +15,9 @@ class Profile(models.Model):
 
 class Description(models.Model):
     name = models.CharField(max_length=20)
-    description = models.TextField(max_length=255)
+    description = models.TextField(max_length=500)
+    image = models.ImageField(upload_to='images/')
+
     
     def __str__(self):
         return f"{self.name}"

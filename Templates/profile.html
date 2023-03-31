@@ -12,6 +12,15 @@
    </nav>
     <div class="row">
       <div class="col-sm">
+        {%if outcome %}
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 class="card-title">{{outcome.name}}</h5>
+            <p class="card-text">{{outcome.description}}</p>
+            
+          </div>
+        </div>
+        {% endif %}
       </div>
       <div class="col-sm midb">
         <form class="form-signin" method="GET">
@@ -22,22 +31,16 @@
               <div class="input-group">
                 <button class="btn btn-outline-secondary" type="submit">Check</button>
               </div>
-              <div class="col-lg-12">
-                <span>
-                  <p class="weat">{{ context.weather_condition }}</p>
-                  <p class="desc">{{ context.weather_description }}</p>
-                  <p class="cou">{{ context.country }}</p>
-                  <p class="cit">{{ context.city }}</p>
-                  <p><b>{{ context.temp }}</b>&nbsp;&nbsp;<b>{{ context.base }}</b></p>
-                  <p>{{outcome.description}}</p>
-
-                </span>
-              </div>
             </div>
           </form>
       </div>
       <div class="col-sm">
-
+        {% if outcome %}
+        <div class="card" style="width: 28rem;">
+          <img src="{{outcome.image.url}}" class="card-img-top" alt="vegetables">
+          
+        </div>
+        {%endif%}
       </div>
     </div>
 </div>
